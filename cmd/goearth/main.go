@@ -106,11 +106,11 @@ func runNew(args []string) (err error) {
 	var msgPackage, inChatIdentifiers, outWaveArgs string
 	switch opts.client {
 	case "flash":
-		msgPackage = "xabbo.b7c.io/goearth"
+		msgPackage = "github.com/scottstamp/goearth"
 		inChatIdentifiers = "in.Chat, in.Whisper, in.Shout"
 		outWaveArgs = "out.AvatarExpression, 1"
 	case "shockwave":
-		msgPackage = "xabbo.b7c.io/goearth/shockwave"
+		msgPackage = "github.com/scottstamp/goearth/shockwave"
 		inChatIdentifiers = "in.CHAT, in.CHAT_2, in.CHAT_3"
 		outWaveArgs = "out.WAVE"
 	default:

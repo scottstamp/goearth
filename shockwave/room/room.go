@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	g "xabbo.b7c.io/goearth"
+	g "github.com/scottstamp/goearth"
 )
 
 // Info contains information about a room.

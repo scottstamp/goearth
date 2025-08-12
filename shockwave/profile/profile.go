@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"strings"
 
-	g "xabbo.b7c.io/goearth"
+	g "github.com/scottstamp/goearth"
 )
 
 type Profile struct {

@@ -3,7 +3,7 @@ package catalog
 import (
 	"strings"
 
-	g "xabbo.b7c.io/goearth"
+	g "github.com/scottstamp/goearth"
 )
 
 // Index is a map of catalog page ID -> page name.

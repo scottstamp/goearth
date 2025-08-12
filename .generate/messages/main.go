@@ -205,7 +205,7 @@ func generateMessagesSrc(dir Dir, release Release, messages []Message) (buffer [
 
 	fmt.Fprintf(b, "// Generated for %s release %s (source: sulek.dev)\n\n", release.VariantPath, release.Version)
 	fmt.Fprintf(b, "package %s\n\n", dir.ShortName())
-	fmt.Fprint(b, "import g \"xabbo.b7c.io/goearth\"\n\n")
+	fmt.Fprint(b, "import g \"github.com/scottstamp/goearth\"\n\n")
 
 	dirShortName := dir.ShortName()
 	dirShortNameTitle := strings.ToUpper(dirShortName[:1]) + dirShortName[1:]

@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	g "xabbo.b7c.io/goearth"
+	g "github.com/scottstamp/goearth"
 )
 
 func TestNavNodeInfo(t *testing.T) {

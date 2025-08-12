@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"strings"
 
-	g "xabbo.b7c.io/goearth"
-	"xabbo.b7c.io/goearth/internal/debug"
+	g "github.com/scottstamp/goearth"
+	"github.com/scottstamp/goearth/internal/debug"
 )
 
 type NodeInfo struct {

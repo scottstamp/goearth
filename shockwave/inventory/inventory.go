@@ -3,7 +3,7 @@ package inventory
 import (
 	"strconv"
 
-	g "xabbo.b7c.io/goearth"
+	g "github.com/scottstamp/goearth"
 )
 
 // Inventory represents a list of inventory items.

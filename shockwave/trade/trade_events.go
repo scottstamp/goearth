@@ -1,6 +1,6 @@
 package trade
 
-import g "xabbo.b7c.io/goearth"
+import g "github.com/scottstamp/goearth"
 
 // Args holds the arguments for trade events.
 type Args struct {

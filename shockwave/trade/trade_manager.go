@@ -4,11 +4,11 @@ import (
 	"strconv"
 	"strings"
 
-	g "xabbo.b7c.io/goearth"
-	"xabbo.b7c.io/goearth/internal/debug"
-	"xabbo.b7c.io/goearth/shockwave/in"
-	"xabbo.b7c.io/goearth/shockwave/inventory"
-	"xabbo.b7c.io/goearth/shockwave/out"
+	g "github.com/scottstamp/goearth"
+	"github.com/scottstamp/goearth/internal/debug"
+	"github.com/scottstamp/goearth/shockwave/in"
+	"github.com/scottstamp/goearth/shockwave/inventory"
+	"github.com/scottstamp/goearth/shockwave/out"
 )
 
 var dbg = debug.NewLogger("[trade]")

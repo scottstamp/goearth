@@ -16,8 +16,8 @@ import (
 
 	"golang.org/x/exp/slices"
 
-	"xabbo.b7c.io/goearth/encoding"
-	"xabbo.b7c.io/goearth/internal/debug"
+	"github.com/scottstamp/goearth/encoding"
+	"github.com/scottstamp/goearth/internal/debug"
 )
 
 var dbgExt = debug.NewLogger("[ext]")

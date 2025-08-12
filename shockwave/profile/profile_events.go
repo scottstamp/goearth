@@ -1,6 +1,6 @@
 package profile
 
-import g "xabbo.b7c.io/goearth"
+import g "github.com/scottstamp/goearth"
 
 // Args contains the event arguments for profile events.
 type Args struct {

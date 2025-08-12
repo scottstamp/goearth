@@ -1,7 +1,7 @@
 package trade
 
 import (
-	"xabbo.b7c.io/goearth/shockwave/inventory"
+	"github.com/scottstamp/goearth/shockwave/inventory"
 )
 
 // Offers is an array that holds the offers of the trader and tradee, respectively.

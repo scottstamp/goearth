@@ -1,6 +1,6 @@
 package room
 
-import g "xabbo.b7c.io/goearth"
+import g "github.com/scottstamp/goearth"
 
 // Args hold the arguments for room events.
 type Args struct {
