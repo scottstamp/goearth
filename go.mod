@@ -1,4 +1,4 @@
-module xabbo.b7c.io/goearth
+module github.com/scottstamp/goearth
 
 go 1.24
 
