@@ -226,4 +226,7 @@ var (
 	WATCHGAME                     = g.Out.Id("WATCHGAME")
 	WAVE                          = g.Out.Id("WAVE")
 	WHISPER                       = g.Out.Id("WHISPER")
+
+	PLANT_HARVEST = g.Out.Id("PLANT_HARVEST")
+	PLANT_WATER   = g.Out.Id("PLANT_WATER")
 )

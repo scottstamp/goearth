@@ -1,5 +1,5 @@
 module xabbo.b7c.io/goearth
 
-go 1.23
+go 1.24
 
-require golang.org/x/exp v0.0.0-20240613232115-7f521ea00fb8
+require golang.org/x/exp v0.0.0-20250811191247-51f88131bc50

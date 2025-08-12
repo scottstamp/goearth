@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"strconv"
 	"strings"
+	"time"
 
 	g "xabbo.b7c.io/goearth"
 )
@@ -26,16 +27,20 @@ type Info struct {
 
 // Object represents a floor item in a room.
 type Object struct {
-	Id            int
-	Class         string
-	X, Y          int
-	Width, Height int
-	Direction     int
-	Z             float64
-	Colors        string
-	RuntimeData   string
-	Extra         int
-	StuffData     string
+	Id                int
+	Class             string
+	X, Y              int
+	Width, Height     int
+	Direction         int
+	Z                 float64
+	Colors            string
+	RuntimeData       string
+	Extra             int
+	StuffData         string
+	IsPlant           int
+	WaterSecondsLeft  int
+	RemainingHarvests int
+	ExpiresAt         time.Time
 }
 
 func (obj Object) String() string {
@@ -54,7 +59,12 @@ func (obj *Object) Parse(p *g.Packet, pos *int) {
 		&obj.X, &obj.Y, &obj.Width, &obj.Height,
 		&obj.Direction, &obj.Z,
 		&obj.Colors, &obj.RuntimeData,
-		&obj.Extra, &obj.StuffData)
+		&obj.Extra, &obj.StuffData, &obj.IsPlant)
+
+	if obj.IsPlant == 1 {
+		p.ReadPtr(pos, &obj.WaterSecondsLeft, &obj.RemainingHarvests)
+		time.Now().Add(time.Duration(obj.WaterSecondsLeft) * time.Second)
+	}
 }
 
 // Item represents a wall item in a room.
@@ -205,6 +215,7 @@ func (tile Tile) ToPoint() Point {
 
 type EntityBase struct {
 	Index  int
+	Id     int
 	Name   string
 	Figure string
 	Gender string
@@ -218,9 +229,14 @@ type EntityBase struct {
 // Entity represents a user, pet or bot in a room.
 type Entity struct {
 	EntityBase
-	Dir     int
-	HeadDir int
-	Action  string
+	T          int
+	Expression string
+	Action     string
+	Dir        int
+	Furni      int
+	Plate      int
+	//HeadDir int
+	//Action  string
 }
 
 func (ent Entity) String() string {

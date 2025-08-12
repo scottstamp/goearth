@@ -480,7 +480,7 @@ func (mgr *Manager) updateEntities(statuses []EntityStatus) []EntityUpdateArgs {
 			cur := pre
 			cur.Tile = status.Tile
 			cur.Dir = status.BodyDir
-			cur.HeadDir = status.HeadDir
+			//cur.HeadDir = status.HeadDir
 			cur.Action = status.Action
 			mgr.entities[status.Index] = cur
 			updates = append(updates, EntityUpdateArgs{Pre: pre, Entity: cur})
@@ -710,8 +710,58 @@ func (mgr *Manager) handleUsers(e *g.Intercept) {
 		return
 	}
 
+	dbg.Println("test")
+
 	var ents []Entity
-	e.Packet.Read(&ents)
+	count := e.Packet.ReadInt()
+	for i := 0; i < count; i++ {
+		idx := e.Packet.ReadInt()
+		id := e.Packet.ReadInt()
+		name := e.Packet.ReadString()
+		figure := e.Packet.ReadString()
+		gender := e.Packet.ReadString()
+		custom := e.Packet.ReadString()
+		x := e.Packet.ReadInt()
+		y := e.Packet.ReadInt()
+		e.Packet.ReadString()
+		pool := e.Packet.ReadString()
+		badge := e.Packet.ReadString()
+		userType := e.Packet.ReadInt()
+		if userType == 1 && pool == "" {
+			expression := e.Packet.ReadString()
+			action := e.Packet.ReadString()
+			direction := e.Packet.ReadInt()
+			furni := e.Packet.ReadInt()
+			plate := e.Packet.ReadInt()
+
+			ent := Entity{
+				EntityBase: EntityBase{
+					Index:  idx,
+					Id:     id,
+					Name:   name,
+					Figure: figure,
+					Gender: gender,
+					Custom: custom,
+					Tile: Tile{
+						X: x,
+						Y: y,
+						Z: 0.0,
+					},
+					PoolFigure: pool,
+					BadgeCode:  badge,
+					Type:       1,
+				},
+				Expression: expression,
+				Action:     action,
+				Dir:        direction,
+				Furni:      furni,
+				Plate:      plate,
+			}
+
+			ents = append(ents, ent)
+		}
+	}
+	//e.Packet.Read(&ents)
 
 	mgr.addEntities(ents)
 
