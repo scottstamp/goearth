@@ -63,7 +63,7 @@ func (obj *Object) Parse(p *g.Packet, pos *int) {
 
 	if obj.IsPlant == 1 {
 		p.ReadPtr(pos, &obj.WaterSecondsLeft, &obj.RemainingHarvests)
-		time.Now().Add(time.Duration(obj.WaterSecondsLeft) * time.Second)
+		obj.ExpiresAt = time.Now().Add(time.Duration(obj.WaterSecondsLeft) * time.Second)
 	}
 }
 
