@@ -38,6 +38,7 @@ type Object struct {
 	Extra             int
 	StuffData         string
 	IsPlant           int
+	CanBeWatered      int
 	WaterSecondsLeft  int
 	RemainingHarvests int
 	ExpiresAt         time.Time
@@ -62,7 +63,7 @@ func (obj *Object) Parse(p *g.Packet, pos *int) {
 		&obj.Extra, &obj.StuffData, &obj.IsPlant)
 
 	if obj.IsPlant == 1 {
-		p.ReadPtr(pos, &obj.WaterSecondsLeft, &obj.RemainingHarvests)
+		p.ReadPtr(pos, &obj.CanBeWatered, &obj.WaterSecondsLeft, &obj.RemainingHarvests)
 		obj.ExpiresAt = time.Now().Add(time.Duration(obj.WaterSecondsLeft) * time.Second)
 	}
 }
