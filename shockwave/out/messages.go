@@ -227,6 +227,7 @@ var (
 	WAVE                          = g.Out.Id("WAVE")
 	WHISPER                       = g.Out.Id("WHISPER")
 
-	PLANT_HARVEST = g.Out.Id("PLANT_HARVEST")
-	PLANT_WATER   = g.Out.Id("PLANT_WATER")
+	PLANT_HARVEST           = g.Out.Id("PLANT_HARVEST")
+	PLANT_WATER             = g.Out.Id("PLANT_WATER")
+	GARDENING_COMPOST_PLANT = g.Out.Id("GARDENING_COMPOST_PLANT")
 )
